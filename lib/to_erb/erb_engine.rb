@@ -1,4 +1,6 @@
 # Fork of https://gist.github.com/17371
+require "haml"
+
 class ErbEngine < Haml::Engine
   def push_script(text, preserve_script, in_tag = false, preserve_tag = false,
                   escape_html = false, nuke_inner_whitespace = false)
