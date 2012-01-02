@@ -12,6 +12,7 @@ sudo gem install to_erb
 == Known Limitations & Issues
 
 * Does not support haml helpers (you should fix that by hand after conversion)
+* Strings on tag attributes are not escaped
 
 == Usage
 
