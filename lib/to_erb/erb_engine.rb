@@ -16,7 +16,7 @@ module Haml
       str_attrs = []
       attributes.each do |k,v|
         value = if Sexp === v
-          "<%= #{Ruby2Ruby.new.process v} %>"
+          "'<%= #{Ruby2Ruby.new.process v} %>'"
         else
           v.gsub("'","\\'")
         end
