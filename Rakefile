@@ -12,7 +12,7 @@ spec = Gem::Specification.new do |s|
   s.summary = 'Haml to erb conversion tool'
   s.add_dependency "haml"
   s.add_dependency "ruby2ruby"
-  s.add_dependency "rubyparser"
+  s.add_dependency "ruby_parser"
   s.homepage = "http://github.com/tario/to_erb"
   s.executables = ["to_erb"]
   s.has_rdoc = true
