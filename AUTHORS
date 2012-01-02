@@ -1,4 +1,4 @@
 to_erb de tario <darios3@gmail.com> and mislav (Mislav Marohnić)
-  - Mislav Marohnić
-	- Dario Seminara
+  - Mislav Marohnić (ErbEngine solution, see erb_engine.rb for more info)
+	- Dario Seminara (Gem packaging, hack for haml attributes conversion)
 
