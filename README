@@ -1,0 +1,31 @@
+= to_erb: simple haml2erb conversion tool
+
+Searching the web for a tool or method to convert haml views to erb I have found a gist on github (https://gist.github.com/17371) with the solution consiting on a hack using the haml engine itself to generate the erb code, For practicality, I have decided to use that snippet in a packaged gem with a command line tool plus a few additional improvements...
+Important part of the credit must be for the creator of the gist. 
+
+== Installation
+
+The install is as simple as execute the well-known gem install:
+
+sudo gem install to_erb
+
+== Known Limitations & Issues
+
+* Does not support haml helpers (you should fix that by hand after conversion)
+
+== Usage
+
+Convert a haml view to erb
+
+to_erb app/views/products/index.haml
+
+Convert all haml views under app/views directory
+
+to_erb app/views
+
+NOTE: Remember to remove the haml views after conversion!!
+
+== Copying
+
+Copyright (c) 2012 Dario Seminara, released under the GPL License (see LICENSE)
+
