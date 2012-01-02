@@ -1,2 +1,32 @@
 #!/usr/bin/env ruby
+require "to_erb"
 
+USAGE_HELP=<<END
+Usage: to_erb [viewspath]
+
+Example
+  Convert app/views/products/show.haml to app/views/products/show.erb  
+
+    to_erb app/views/products/show.haml 
+
+  Convert all views under app/views/products/ to erb  
+
+    to_erb app/views/products/
+
+END
+
+if ARGV.size == 0
+
+print USAGE_HELP
+
+else
+
+  if ARGV[0].match(/\.haml$/)
+    file = ARGV[0]
+    ToErb.convert(file,file.gsub(/\.haml$/,".erb"))
+  else
+    Dir[ARGV[0]+"/**/*.haml"].each do |file|
+      ToErb.convert(file,file.gsub(/\.haml$/,".erb"))
+    end
+  end
+end
