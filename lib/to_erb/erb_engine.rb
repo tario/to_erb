@@ -2,13 +2,15 @@
 require "haml"
 require "ruby_parser"
 require "ruby2ruby"
-
+require "pry"
 module Haml
   class Buffer
     def extended_attributes(class_id, obj_ref, *attributes_hashes)
+
       attributes = class_id
       attributes_hashes.each do |old|
-        self.class.merge_attrs(attributes, to_hash(old.map {|k, v| [k.to_s, v]}))
+	hash = to_hash(old.map {|k, v| [k.to_s, v]})
+	attributes.merge!(hash)
       end
 
       self.class.merge_attrs(attributes, parse_object_ref(obj_ref)) if obj_ref
@@ -24,7 +26,7 @@ module Haml
         str_attrs << "#{k}=#{value}"
       end   
 
-      str_attrs.join(" ")
+      " "+str_attrs.join(" ")
     end  
   end
 end
