@@ -2,7 +2,7 @@
 require "haml"
 require "ruby_parser"
 require "ruby2ruby"
-require "pry"
+
 module Haml
   class Buffer
     def extended_attributes(class_id, obj_ref, *attributes_hashes)
